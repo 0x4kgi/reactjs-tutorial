@@ -53,13 +53,23 @@ class Board extends React.Component {
 }
 
 class Game extends React.Component {
+	//create a constructor when having a class that's going to have class variables
 	constructor(props) {
+		//always have super(props) when creating constructors
 		super(props);
+
+		//this creates a new history array to have all the moves in the
+		//game save here
 		this.state = {
+			//fill history with empty game grid array
 			history: [{
 				squares: Array(9).fill(null)
 			}],
+
+			//variable for which player ids going to move
 			xIsNext: true,
+
+			//step counter, indicates what move are we in the game
 			stepNumber: 0,
 		};
 	}
@@ -69,7 +79,7 @@ class Game extends React.Component {
 		//gets the history, this is the initialization 
 		const history = this.state.history.slice(0, this.state.stepNumber + 1);
 
-		//shows thw current progress, showing the most recent move
+		//shows the current progress, showing the most recent move
 		const current = history[history.length - 1];
 
 		//slice()'d the state so we can go back in the past. and treated it as immutable									
@@ -94,10 +104,12 @@ class Game extends React.Component {
 			//changes the player						
 			xIsNext: !this.state.xIsNext,	
 			
+			//indicates how many move are we in
 			stepNumber: history.length,
 		});
 	}
 
+	//function for history button onClick
 	jumpTo(step) {
 		this.setState({
 			stepNumber: step,
