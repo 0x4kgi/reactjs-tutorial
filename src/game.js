@@ -50,7 +50,9 @@ class Game extends React.Component {
 		this.setState({	
 			//combines the old history array to the new history array one, i think?
 			history: history.concat([{
-				squares: squares,
+                squares: squares,
+                currentLocation: squareCoordinates(i),
+                player: (this.state.xIsNext? 'X' : 'O'),
 			}]),
 
 			//changes the player						
@@ -78,15 +80,19 @@ class Game extends React.Component {
 
 		const moves = history.map((step, move) => {
 			const desc = move 
-				? 'Go to move # ' + move
+				? 'Go to move #' + move
 				: 'Go to move start';
 
-            let location = this.state.coordinates;
-            let player = (this.state.xIsNext? 'X' : 'O');
+            let location = step.currentLocation
+                ? (` moves at ${step.currentLocation}`)
+                : '';
+            let player = step.player
+                ? (` where ${step.player}`)
+                : '';
 			return (
 				<li key={move}>
 					<button onClick={() => this.jumpTo(move)}>
-                        {desc + " where " + player + " moves at " + location}
+                        {desc + player + location}
                     </button>
 				</li>
 			);
