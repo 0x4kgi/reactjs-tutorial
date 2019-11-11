@@ -89,6 +89,7 @@ class Game extends React.Component {
             let player = step.player
                 ? (` where ${step.player}`)
                 : '';
+                
 			return (
 				<li key={move}>
 					<button onClick={() => this.jumpTo(move)}>
@@ -101,7 +102,10 @@ class Game extends React.Component {
 		let status;
 		if (winner) {
 			status = 'Winner: ' + winner; 
-		} else {
+        } else if (this.state.stepNumber === 9) {
+            status = 'Draw. No one won.';
+        } 
+        else {
 			status = 'Next player: ' + (this.state.xIsNext? 'X' : 'O');
 		}
 
