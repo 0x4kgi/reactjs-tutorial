@@ -89,10 +89,16 @@ class Game extends React.Component {
             let player = step.player
                 ? (` where ${step.player}`)
                 : '';
+            let weight = (this.state.stepNumber === move)
+                ? 'selected-move'
+                : '';
                 
 			return (
 				<li key={move}>
-					<button onClick={() => this.jumpTo(move)}>
+                    <button 
+                        onClick={() => this.jumpTo(move)}
+                        className={weight}
+                    >
                         {desc + player + location}
                     </button>
 				</li>
