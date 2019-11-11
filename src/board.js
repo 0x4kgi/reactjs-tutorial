@@ -11,27 +11,33 @@ class Board extends React.Component {
 			onClick={() => this.props.onClick(i) }	//sets the square on click func to handleClick in this class
 		/>
 		);
-	}
+    }
+    
+    renderBoard(row, col) {
+        let board = [];
+        let sq = 0;
+        for (let i = 0; i < row; i += 1) {
+            let squares = [];
+            for (let j = 0; j < col; j += 1) {
+                squares.push(this.renderSquare(sq));
+                sq += 1;                
+            }
+            
+            board.push(
+                <div className="board-row">
+                    {squares}
+                </div>
+            );
+        }
+
+        return board;
+    }
 
 	//render() func, important in React classes, if the return HTML tags, that is
 	render() {																		
 		return (
 			<div>
-				<div className="board-row">
-				{this.renderSquare(0)}
-				{this.renderSquare(1)}
-				{this.renderSquare(2)}
-				</div>
-				<div className="board-row">
-				{this.renderSquare(3)}
-				{this.renderSquare(4)}
-				{this.renderSquare(5)}
-				</div>
-				<div className="board-row">
-				{this.renderSquare(6)}
-				{this.renderSquare(7)}
-				{this.renderSquare(8)}
-				</div>
+				{this.renderBoard(3,3)}
 			</div>
 		);
 	}
