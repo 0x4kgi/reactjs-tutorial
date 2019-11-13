@@ -2,7 +2,7 @@
   "name": "tictactoe",
   "version": "0.1.1",
   "private": true,
-  "homepage": "https://0x4kgi.github.io/reactjs-tictactoe/",
+  "homepage": "https://0x4kgi.github.io/reactjs-tutorial/",
   "dependencies": {
     "gh-pages": "^2.1.1",
     "react": "^16.10.2",
