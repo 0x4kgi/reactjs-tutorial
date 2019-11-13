@@ -1,8 +1,8 @@
 {
-  "name": "my-app",
-  "version": "0.1.0",
+  "name": "tictactoe",
+  "version": "19y46w3a",
   "private": true,
-  "homepage": "https://0x4kgi.github.io/reactjs-tutorial/",
+  "homepage": "https://0x4kgi.github.io/reactjs-tictactoe/",
   "dependencies": {
     "gh-pages": "^2.1.1",
     "react": "^16.10.2",
