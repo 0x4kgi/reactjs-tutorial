@@ -21,15 +21,15 @@ ol, ul {
   background: #fff;
   border: 1px solid #999;
   float: left;
-  font-size: 24px;
+  font-size: 75px;
   font-weight: bold;
   line-height: 34px;
-  height: 34px;
+  height: 100px;
   margin-right: -1px;
   margin-top: -1px;
   padding: 0;
   text-align: center;
-  width: 34px;
+  width: 100px;
 }
 
 .square:focus {
@@ -51,4 +51,13 @@ ol, ul {
 
 .selected-move {
   font-weight: 700;
+}
+
+.other-div {
+  margin: 20px 0px;
+  width: 50%;
+}
+
+.task-completed {
+  background-color: lightgreen;
 }
