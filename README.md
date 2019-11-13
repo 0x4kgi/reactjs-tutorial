@@ -14,3 +14,11 @@ This is my attempt on recreating the tutorial game from [The ReactJS docs](https
 ## Original README.md
 
 [here](create-react-app.md)
+
+## Live Demo
+
+[on my github.io page](https://0x4kgi.github.io/reactjs-tutorial/)
+
+### How I did this
+
+I read this [article](https://codeburst.io/deploy-react-to-github-pages-to-create-an-amazing-website-42d8b09cd4d).
